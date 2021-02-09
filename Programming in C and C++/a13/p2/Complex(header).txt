@@ -1,0 +1,28 @@
+#ifndef COMPLEX_H_
+#define COMPLEX_H_
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class complex{
+    private:
+        double real;
+        double imaginary;
+    public:
+        complex();
+        complex(double a, double b);
+        double getreal() const {return real;}
+        double getimaginary() const{return imaginary;}
+        void setreal(double real) {this->real = real;}
+        void setimaginary(double imaginary) {this->imaginary = imaginary;}
+        complex operator+(const complex& another);
+        complex operator-(const complex& another);
+        complex operator*(const complex& another);
+        void operator=(const complex& another);
+        friend ifstream& operator>>(ifstream& in, complex& number);
+        friend ofstream& operator<<(ofstream& out, const complex& number);
+        
+};
+
+#endif

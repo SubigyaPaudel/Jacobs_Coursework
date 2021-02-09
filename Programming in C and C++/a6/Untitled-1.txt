@@ -1,0 +1,7 @@
+1. If I include only the header file  in the file containing the main() function, how does the file with main() access the definitions of those functions?
+2. What are the technical names for the files containing the main function and the file containing the definitions of those functions?
+3. While compiling the c files in the terminal, do we have to include the header file as well? After all it is included in the file with the main function and the
+    definitions of other functions.
+4. Problem no. a7_p1: when a6_p8 was split into multiple files the printlist function(or potentially all functions) stopped working. 
+5. What are commands in the Makefile? Examples in context of an actual Makefile.
+6. For a function that doesn't take any arguments, can we declare it as void (*fct) ()? Or should we specify the type of the argument as "void"? 

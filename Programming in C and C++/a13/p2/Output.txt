@@ -1,0 +1,4 @@
+The numbers extracted from the file-12-17i and -14+2.5i
+The sum of the two numbers is:-26-14.5i
+The difference of the two numbers is:2-19.5i
+The product of the two numbers is:210.5+208i

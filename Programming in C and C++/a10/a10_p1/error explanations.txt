@@ -1,0 +1,9 @@
+Removing the "using namespace std;" lead to the datatypes - like string - and the streams - like cin and cout - undefined. The functions and
+datatypes have their on unique meaning depending on the namespace used in the source code. Thus, not specifying the namespace leaves the
+datatypes and the functions used in the program incomprehensible to the compiler, thus leading to compiliation errors. Adding "std::" in 
+front of the functions and datatypes declared in namespace std, will solve the problem.
+
+Removing "Critter::" from one of the methods leads to errors because it is not known for which class the method is defined. When the method 
+tries to access certain elements contained within a certain class, cannot access them, and those variables also remain undefined leading
+to compliation errors. If the Critter:: is removed from a method, then in order for the method to work, the method should be defined within 
+the class itself i.e. make the function an inline function.

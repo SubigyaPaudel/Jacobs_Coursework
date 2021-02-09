@@ -1,0 +1,4 @@
+sum = 5.000000
+difference = 1.000000
+product = 6.000000
+quotient = 1.500000

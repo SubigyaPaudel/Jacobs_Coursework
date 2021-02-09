@@ -1,0 +1,5 @@
+This is file1.txt
+Max length of a line = 40
+if the numbers are being seen
+then the algorithm needs to be
+changed

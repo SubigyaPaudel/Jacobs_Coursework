@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+#include "Complex.h"
+
+using namespace std;
+
+complex::complex(){
+    real = 0;
+    imaginary = 0;
+}
+
+complex::complex(double a, double b){
+    real = a;
+    imaginary = b;
+}
+
+complex complex::operator+(const complex& another){
+    real+= another.getreal();
+    imaginary += another.getimaginary();
+    return complex(real,imaginary);
+}
+
+complex complex::operator-(const complex& another){
+    real -= another.getreal();
+    imaginary -= another.getimaginary();
+    return complex(real,imaginary);
+}
+
+complex complex::operator*(const complex& another){
+    double x = another.getreal();
+    double y = another.getimaginary();
+    real = x * this->real - this->imaginary * y;
+    imaginary = y * this->real + x * this->imaginary;
+    return complex(real,imaginary);
+}
+
+void complex::operator=(const complex& another){
+    real = another.getreal();
+    imaginary = another.getimaginary();
+}
+
+ifstream& operator>>(ifstream& in, const complex& number){
+    in >> number.real;
+    getchar();
+    in >> number.imaginary;
+    return in;
+}
+
+ofstream& operator<<(ofstream& out, const complex& number){
+    out << number.real << "+" << number.imaginary << "i";
+    return out;
+}

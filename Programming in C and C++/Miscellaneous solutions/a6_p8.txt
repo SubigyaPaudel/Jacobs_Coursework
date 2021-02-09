@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct list{
+    int value;
+    struct list *next;
+};
+
+int main(){
+    struct list *p = (struct list*) malloc(sizeof(struct list));
+    int n;
+    char oper;
+    int x = 0;
+    scanf("%c",&oper);
+    getchar();
+    while(x == 0)
+    switch(oper){
+        case 'q':
+            ++x;
+            struct list *a;
+            while(p != NULL){
+            a = p->next;
+            free(p);
+            p = a;
+            }
+            break;
+        case 'a':
+            scanf("%d",&n);
+            struct list *b = (struct list*) malloc(sizeof(struct list));
+            if(b == NULL){
+            printf("Error allocating memory\n");
+            exit(1);
+            }
+            while (p->next != NULL)
+                p = p->next;
+            p->next = b;
+            b->value = n;
+            b->next = NULL;
+            break;
+        case 'b':
+            scanf("%d",&n);
+            struct list *c = (struct list*) malloc(sizeof(struct list));
+            if(c == NULL){
+                printf("Error allocating memory\n");
+                exit(1);
+            }
+            c->next = p;
+            c->value = n;
+            p = a;
+            break;
+        case 'r':
+            a = p->next;
+            free(p);
+            break;
+        case 'p':
+            do{
+                printf("%d",p->value);
+                p = p->next;
+            }while(p->next != NULL);
+            break;
+    }
+    return 0;
+}
